@@ -1,18 +1,25 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <v-col cols="12">
+    <v-combobox
+      v-model="select"
+      :items="items"
+      label="Select a favorite activity or create a new one"
+      multiple
+    ></v-combobox>
+  </v-col>
+  <div class="alert alert-primary" role="alert">
+    A simple primary alert—check it out!
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import { defineComponent } from "vue";
 
-export default {
+// Components
+
+export default defineComponent({
   name: "HomeView",
-  components: {
-    HelloWorld,
-  },
-};
+
+  components: {},
+});
 </script>
