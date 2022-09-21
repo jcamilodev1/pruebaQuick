@@ -106,6 +106,7 @@ export default {
         border-radius: 10px;
         background: #FCFCFC;
         padding: 20px;
+        margin-bottom: 15px;
         cursor: pointer;
         &:hover{
           box-shadow: 10px 1px 10px 1px rgba(58, 58, 58, 0.2);

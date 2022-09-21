@@ -43,6 +43,9 @@ export default {
   display: grid;
   grid-template-columns: 20% 1fr;
   min-height: 100vh;
+  @media(max-width: 700px){
+    grid-template-columns: 1fr;
+  }
   &__aside {
     display: flex;
     flex-direction: column;
