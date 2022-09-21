@@ -3,6 +3,7 @@
     <article class="dashboard__aside">
       <a :class="active ? 'active': ''" @click="active = true">Table</a>
       <a :class="active ? '': 'active'" @click="active = false">Categories</a>
+      <BaseButton @click="logOut" label="Cerrar"></BaseButton>
     </article>
     <article class="dashboard__container">
       <Table v-if="active"></Table>
@@ -16,16 +17,24 @@ import { ref } from '@vue/reactivity';
 
 import Table from './Table.vue';
 import Categories from './Categories.vue';
+import BaseButton from '@/components/form/BaseButton.vue';
+import { useRouter } from 'vue-router';
 export default {
     setup() {
         const form = ref({});
+        const router = useRouter()
         const active = ref(true);
+        const logOut =  () => {
+          localStorage.removeItem('token')
+          router.push({ path: '/login'})
+        }
         return {
             form,
             active,
+            logOut
         };
     },
-    components: { Table, Categories }
+    components: { Table, Categories, BaseButton }
 };
 </script>
 
@@ -39,10 +48,11 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     background-color: rgba(0, 0, 0, 0.5);
     a{
       width: 100%;
-      padding: 20px;
+      margin-bottom: 20px;
       color: white;
       cursor: pointer;
       text-decoration: none;
@@ -52,6 +62,9 @@ export default {
       &.active{
         color: #fcb100;
       }
+    }
+    button{
+
     }
   }
   &__container{
