@@ -25,7 +25,7 @@ export default {
     const router =  useRouter()
     const form = ref({});
     const getUsers = async () => {
-      const data = await axios.get("/src/fakeApi/datos.json");
+      const data = await axios.get("../../src/fakeApi/datos.json");
       return data.data
     }
     const login = async () => {
