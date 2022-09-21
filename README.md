@@ -1,4 +1,4 @@
-# levenwallet
+# VueBase
 
 ## Project setup
 ```
