@@ -1,0 +1,27 @@
+[
+  {
+    "email" : "juan@mail.com",
+    "password": "12345",
+    "status": "1"
+  },
+  {
+    "email" : "carlos@mail.com",
+    "password": "12345",
+    "status": "0"
+  },
+  {
+    "email" : "maria@mail.com",
+    "password": "12345",
+    "status": "0"
+  },
+  {
+    "email" : "marta@mail.com",
+    "password": "12345",
+    "status": "1"
+  },
+  {
+    "email" : "lucia@mail.com",
+    "password": "12345",
+    "status": "0"
+  }
+]
