@@ -3,14 +3,13 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "",
-    component: () => import("@/layouts/Main.vue"),
-    children: [
-      {
-        path: "/",
-        name: "Dashboard",
-        component: () => import("@/views/dashboard/Index.vue"),
-      },
-    ],
+    name: "Dashboard",
+    component: () => import("@/views/dashboard/Index.vue"),
+  },
+  {
+    path: "/servicing",
+    name: "Servicing",
+    component: () => import("@/views/servicing/Index.vue"),
   },
   {
     component: () => import("@/layouts/Auth.vue"),
@@ -29,13 +28,12 @@ const router = createRouter({
   routes,
 });
 const existToken = () => {
-  return true
-  return !!localStorage.token;
+  return localStorage.getItem('token');
 }
 
 router.beforeEach((to, from, next) => {
-  if (to.name !== 'Login' && existToken()) next({ name: 'Login' })
-  // if the user is not authenticated, `next` is called twice
+  const token = existToken()
+  if (to.name !== 'Login' && !token) next({ name: 'Login' })
   next()
 });
 export default router;

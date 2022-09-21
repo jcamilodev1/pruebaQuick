@@ -1,18 +1,15 @@
 <template>
   <section class="loginToggle">
-    <a :class="active ? 'active': ''" @click="active = true">Login</a>
-    <a :class="!active ? 'active': ''" @click="active = false">Registrar</a>
+    <a :class="'active'" @click="active = true">Login</a>
   </section>
   <h2>Bienvenidos</h2>
   <Login v-if="active"></Login>
-  <Register v-if="!active"></Register>
 </template>
 <script>
 import { ref } from '@vue/reactivity';
 import Login from './Login.vue';
-import Register from './Register.vue';
   export default {
-    components: { Login, Register },
+    components: { Login },
     setup(){
       const form = ref({})
       const active = ref(true)
@@ -36,7 +33,7 @@ h2{
   padding: 32px;
   a{
     display: block;
-    width: 50%;
+    width: 100%;
     padding: 20px;
     color: #647188;
     border-bottom: 1px solid #647188;

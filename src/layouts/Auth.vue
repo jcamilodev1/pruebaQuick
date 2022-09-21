@@ -4,7 +4,6 @@
       <img src="https://images.pexels.com/photos/3802666/pexels-photo-3802666.jpeg?cs=srgb&dl=pexels-will-mu-3802666.jpg&fm=jpg" alt="">
     </article>
     <article class="authLayout__contain">
-        <img src="/src/assets/img/logoAzul.png" alt="">
         <router-view />
     </article>
   </section>
